@@ -9,7 +9,6 @@ import com.lambdaworks.redis.RedisURI.Builder;
 import com.lambdaworks.redis.api.async.RedisAsyncCommands;
 import com.lambdaworks.redis.api.sync.RedisCommands;
 import io.netty.util.internal.StringUtil;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -42,8 +41,9 @@ public abstract class RedisClientBuilder {
 
 
     public static SingleServerClientBuilder createSingle(String host, int prot) {
-        Preconditions.checkArgument(StringUtil.isNullOrEmpty(host), "host is null");
-        Preconditions.checkArgument(prot < 0 || prot > 65535, "The port number is not legitimate");
+        Preconditions.checkArgument(!StringUtil.isNullOrEmpty(host), "host is null");
+        Preconditions
+                .checkArgument(!(prot < 0 || prot > 65535), "The port number is not legitimate");
         return new SingleServerClientBuilder(host, prot);
     }
 
