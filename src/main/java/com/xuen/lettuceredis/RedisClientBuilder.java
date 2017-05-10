@@ -58,6 +58,7 @@ public abstract class RedisClientBuilder {
                 .build();
     }
 
+    // 异步
     public RedisAsyncCommands<String, String> buildAsync() {
         RedisURI redisURI = redisURIBuilder()
                 .withTimeout(timeout, timeoutUnit)
@@ -70,6 +71,7 @@ public abstract class RedisClientBuilder {
         return redisClient.connect().async();
     }
 
+    // 同步
     public RedisCommands<String, String> buildSync() {
         RedisURI redisURI = redisURIBuilder()
                 .withTimeout(timeout, timeoutUnit)
