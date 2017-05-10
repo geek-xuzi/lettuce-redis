@@ -18,7 +18,6 @@ public class TestLettuce {
                 .createSingle("xuzi520.cn", 6379)
                 .setPassword("xuen123456")
                 .buildAsync();
-
         RedisFuture<String> redisStrFuture = redisAsyncCommands.get("xuen-str");
         RedisFuture<Map<String, String>> redisHashFuture = redisAsyncCommands.hgetall("xuen-hash");
         try {
