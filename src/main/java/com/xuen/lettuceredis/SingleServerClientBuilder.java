@@ -21,19 +21,16 @@ public class SingleServerClientBuilder extends RedisClientBuilder {
         return RedisURI.builder().withHost(host).withPort(prot);
     }
 
-    public String getHost() {
-        return host;
-    }
 
-    public void setHost(String host) {
+
+    public SingleServerClientBuilder setHost(String host) {
         this.host = host;
+        return this;
     }
 
-    public int getProt() {
-        return prot;
-    }
 
-    public void setProt(int prot) {
+    public SingleServerClientBuilder setProt(int prot) {
         this.prot = prot;
+        return this;
     }
 }

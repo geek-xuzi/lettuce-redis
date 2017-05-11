@@ -8,7 +8,10 @@ import com.lambdaworks.redis.RedisURI;
 import com.lambdaworks.redis.RedisURI.Builder;
 import com.lambdaworks.redis.api.async.RedisAsyncCommands;
 import com.lambdaworks.redis.api.sync.RedisCommands;
+import com.xuen.lettuceredis.bean.Server;
 import io.netty.util.internal.StringUtil;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -45,6 +48,13 @@ public abstract class RedisClientBuilder {
         Preconditions
                 .checkArgument(!(prot < 0 || prot > 65535), "The port number is not legitimate");
         return new SingleServerClientBuilder(host, prot);
+    }
+
+    public static SentinelClientBuilder createSentinel(String masterId,
+            List<Server> sentinelServers) {
+        Preconditions.checkArgument(!StringUtil.isNullOrEmpty(masterId), "masterId is null");
+
+        return new SentinelClientBuilder(masterId, sentinelServers);
     }
 
     private ClientOptions buildClientOptions() {
