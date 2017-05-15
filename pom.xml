@@ -42,7 +42,7 @@
     </dependencies>
 
     <build>
-        <finalName>lettuce.redis</finalName>
+        <finalName>lettuce-redis</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
