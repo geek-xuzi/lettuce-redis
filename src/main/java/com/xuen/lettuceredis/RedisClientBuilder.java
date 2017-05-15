@@ -10,7 +10,6 @@ import com.lambdaworks.redis.api.async.RedisAsyncCommands;
 import com.lambdaworks.redis.api.sync.RedisCommands;
 import com.xuen.lettuceredis.bean.Server;
 import io.netty.util.internal.StringUtil;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 

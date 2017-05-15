@@ -19,5 +19,7 @@
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.6.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.6.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.6.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.2" level="project" />
   </component>
 </module>
