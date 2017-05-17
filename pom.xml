@@ -15,10 +15,7 @@
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
         <file.encoding>UTF-8</file.encoding>
-
         <guava.version>19.0</guava.version>
-        <jackson.version>1.9.13</jackson.version>
-        <jackson.version>2.7.5</jackson.version>
         <lettuce.version>4.3.1.Final</lettuce.version>
     </properties>
 
@@ -28,7 +25,6 @@
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
-
         <dependency>
             <groupId>biz.paluch.redis</groupId>
             <artifactId>lettuce</artifactId>
