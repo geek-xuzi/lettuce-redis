@@ -77,4 +77,7 @@ public class DistributedLock {
 
     }
 
+    public String getLockKey() {
+        return lockKey;
+    }
 }
