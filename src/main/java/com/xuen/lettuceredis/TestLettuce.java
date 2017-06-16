@@ -1,10 +1,7 @@
 package com.xuen.lettuceredis;
 
-import com.lambdaworks.redis.RedisFuture;
-import com.lambdaworks.redis.api.async.RedisAsyncCommands;
 import com.lambdaworks.redis.api.sync.RedisCommands;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
+import com.xuen.lock.DistributedLock;
 
 /**
  * @author zheng.xu
@@ -38,8 +35,18 @@ public class TestLettuce {
                 .setPassword("xuen123456")
                 .buildSync();
 
-        String s = redisCommands.get("xuen-str");
-        System.out.println(s);
+        DistributedLock lock = new DistributedLock("lock", redisCommands);
+
+        try {
+            lock.lock();
+            System.out.println("hello word");
+            lock.unLock();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unLock();
+        }
+
     }
 
 

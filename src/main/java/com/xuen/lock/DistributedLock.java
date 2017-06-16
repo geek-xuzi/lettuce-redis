@@ -29,7 +29,7 @@ public class DistributedLock {
 
     private RedisCommands<String, String> redisCommands;
 
-    DistributedLock(String lockKey, RedisCommands<String, String> redisCommands) {
+    public DistributedLock(String lockKey, RedisCommands<String, String> redisCommands) {
         this.lockKey = lockKey;
         this.redisCommands = redisCommands;
     }
