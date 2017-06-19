@@ -22,7 +22,6 @@ public class LockTest {
             lock.lock();
             System.out.println("hello word");
             Thread.sleep(10000);
-            lock.unLock();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
