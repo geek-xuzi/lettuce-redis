@@ -2,6 +2,8 @@ package com.xuen.lettuceredis;
 
 import com.lambdaworks.redis.RedisURI;
 import com.lambdaworks.redis.RedisURI.Builder;
+import com.lambdaworks.redis.api.sync.RedisCommands;
+import com.xuen.lock.DistributedLock;
 
 /**
  * @author zheng.xu

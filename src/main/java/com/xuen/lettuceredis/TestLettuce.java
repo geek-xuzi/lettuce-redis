@@ -1,6 +1,7 @@
 package com.xuen.lettuceredis;
 
 import com.lambdaworks.redis.api.sync.RedisCommands;
+import com.xuen.lock.DistributedLock;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
@@ -44,7 +45,6 @@ public class TestLettuce {
             executor.execute(() -> {
                 try {
                     String userInfo = UUID.randomUUID().toString().replaceAll("-", "");
-                    Thread.sleep(10);
                     redisCommands.watch("watchKey");
                     String val = redisCommands.get("watchKey");
                     Integer valInt = Integer.valueOf(val);
@@ -73,7 +73,8 @@ public class TestLettuce {
 //
 //        try {
 //            lock.lock();
-//            System.out.println("hello word");
+//            Thread.sleep(1000);
+//            System.out.println("three:hello word");
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        } finally {

@@ -20,7 +20,7 @@ public class LockTest {
 
         try {
             lock.lock();
-            System.out.println("hello word");
+            System.out.println("one:hello word");
             Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
