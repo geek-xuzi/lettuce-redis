@@ -20,7 +20,7 @@
   
   - 单redis的同步和异步操作
   - Redis Sentinel HA方案的同步和异步操作
-## 增加Future聚合工具
+## 增加Future聚合工具(LettuceSupport)
  
  - 用法 
  ```java

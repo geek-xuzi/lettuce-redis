@@ -43,8 +43,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="85">
-                <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+              <first_editor relative-caret-position="200">
+                <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -966,11 +966,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498641419958</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update Readme.md">
+      <created>1498645569466</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1498645569466</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59149000" />
+    <option name="totallyTimeSpent" value="59239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="0" />
@@ -1053,7 +1060,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="添加秒杀逻辑" />
     <MESSAGE value="增加Future集合工具的测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加Future集合工具的测试" />
+    <MESSAGE value="update Readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Readme.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1364,8 +1372,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="85">
-            <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <first_editor relative-caret-position="200">
+            <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
             <folding />
           </first_editor>
           <second_editor />
