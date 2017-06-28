@@ -90,17 +90,12 @@ public class LettuceSupport {
 
 
     public static void main(String[] args) throws InterruptedException {
-        CompletionStage<Integer> future1 = CompletableFuture
-                .supplyAsync(() -> 1);
-        CompletionStage<Integer> future2 = CompletableFuture
-                .supplyAsync(() -> 2);
-        CompletionStage<Integer> future3 = CompletableFuture
-                .supplyAsync(() -> 3);
+        CompletionStage<Integer> future1 = CompletableFuture.supplyAsync(() -> 1);
+        CompletionStage<Integer> future2 = CompletableFuture.supplyAsync(() -> 2);
+        CompletionStage<Integer> future3 = CompletableFuture.supplyAsync(() -> 3);
         ArrayList<CompletionStage<Integer>> inputs = Lists
                 .newArrayList(future1, future2, future3);
-        CompletionStage<String> combine = LettuceSupport
-                .combine(inputs, chain -> chain.get(0) + chain.get(1) + chain.get(2) + "");
-
+        CompletionStage<String> combine = LettuceSupport.combine(inputs, chain -> chain.get(0) + chain.get(1) + chain.get(2) + "");
         try {
             String s = LettuceSupport.get(combine);
             System.out.println(s);
