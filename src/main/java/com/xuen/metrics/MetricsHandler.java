@@ -27,15 +27,14 @@ public class MetricsHandler implements RequestHandler{
             HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
         String format = request.getParameter("format");
-
-        response.setContentType(CONTENT_TYPE_TEXT);
+        response.setContentType("text/plain;charset=UTF-8");
         response.setHeader("Content-Encoding", "gzip");
 
         GZIPOutputStream out = new GZIPOutputStream(response.getOutputStream());
         PrintWriter writer = new PrintWriter(out, true);
 
-        pullValueOf(format);
-
+        MetricsProcessor reportor = pullValueOf(format);
+        reportor.report(holder, writer, name);
         out.finish();
         out.flush();
         writer.close();
