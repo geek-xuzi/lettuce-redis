@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Lilypond template
+*.pdf
+*.ps
+*.midi
+*.mid
+*.log
+*~
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+target
+out
+gen
