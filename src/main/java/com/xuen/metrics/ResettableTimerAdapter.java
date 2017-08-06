@@ -5,10 +5,6 @@ import com.codahale.metrics.Clock;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by IntelliJ IDEA.
- * User: liuzz
- * Date: 15-5-7
- * Time: 下午12:50
  */
 public class ResettableTimerAdapter implements Timer {
     private final ResettableTimer record;

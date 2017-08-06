@@ -5,7 +5,7 @@ import com.codahale.metrics.Metric;
 /**
  * 使用<a href="http://metrics.codahale.com/">Metrics</a>的监控客户端
  *
- * @author zhongyuan.zhang
+ * @author
  */
 public class Metrics {
 

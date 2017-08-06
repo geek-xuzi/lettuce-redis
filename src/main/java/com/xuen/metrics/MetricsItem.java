@@ -4,10 +4,7 @@ import com.google.common.base.Strings;
 
 import java.util.Map;
 
-/**
- * @author zhenwei.liu
- * @since 2016-09-22
- */
+
 public class MetricsItem {
 
     private String app;

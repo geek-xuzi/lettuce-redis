@@ -1,7 +1,15 @@
 package com.xuen.lettuceredis;
 
+import com.codahale.metrics.Metric;
 import com.lambdaworks.redis.api.sync.RedisCommands;
 import com.xuen.lock.DistributedLock;
+import com.xuen.metrics.MetricKey;
+import com.xuen.metrics.Metrics;
+import com.xuen.metrics.MetricsHandler;
+import com.xuen.metrics.MetricsHolder;
+
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zheng.xu
@@ -10,22 +18,11 @@ import com.xuen.lock.DistributedLock;
 public class LockTest {
 
     public static void main(String[] args) {
-        //同步
-        RedisCommands<String, String> redisCommands = RedisClientBuilder
-                .createSingle("xuzi520.cn", 6379)
-                .setPassword("xuen123456")
-                .buildSync();
-
-        DistributedLock lock = new DistributedLock("lock", redisCommands);
-
-        try {
-            lock.lock();
-            System.out.println("one:hello word");
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            lock.unLock();
-        }
+        Metrics.timer("test1").tag("a","b").get().update(200, TimeUnit.MILLISECONDS);
+        Metrics.timer("test1").tag("c","b").get().update(200, TimeUnit.MILLISECONDS);
+        Metrics.timer("test2").tag("a","b").get().update(200, TimeUnit.MILLISECONDS);
+        Metrics.counter("count1").tag("a","b").get().inc();
+        Map<MetricKey, Metric> metrics = Metrics.INSTANCE.getHolder().getMetrics();
+        metrics.entrySet().forEach(item -> System.out.println(item.getKey() + ":" + item.getValue()));
     }
 }

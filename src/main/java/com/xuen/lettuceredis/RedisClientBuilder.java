@@ -9,6 +9,7 @@ import com.lambdaworks.redis.RedisURI.Builder;
 import com.lambdaworks.redis.api.async.RedisAsyncCommands;
 import com.lambdaworks.redis.api.sync.RedisCommands;
 import com.xuen.lettuceredis.bean.Server;
+import com.xuen.metrics.Metrics;
 import io.netty.util.internal.StringUtil;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -51,7 +52,9 @@ public abstract class RedisClientBuilder {
 
     public static SentinelClientBuilder createSentinel(String masterId,
             List<Server> sentinelServers) {
+        long start = System.currentTimeMillis();
         Preconditions.checkArgument(!StringUtil.isNullOrEmpty(masterId), "masterId is null");
+        Metrics.timer("createSentinel").tag("a","b").get().update(System.currentTimeMillis(),TimeUnit.MILLISECONDS);
 
         return new SentinelClientBuilder(masterId, sentinelServers);
     }

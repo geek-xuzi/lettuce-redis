@@ -12,7 +12,7 @@ import com.xuen.metrics.adapter.MeterAdapter;
  */
 public class MetricsOps {
 
-    final MetricsHolder holder;
+    public final MetricsHolder holder;
 
     public MetricsOps(boolean isJavaClient) {
         holder = new MetricsHolder(isJavaClient);
